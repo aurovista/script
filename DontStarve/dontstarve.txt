@@ -1,0 +1,9 @@
+tmux new -s dontstarve
+c_shutdown()
+~/start.sh
+tmux attach -t dontstarve
+tmux kill-session -t dontstarve
+
+~/steamcmd/steamcmd.sh +login anonymous +force_install_dir ~/dontstarvetogether_dedicated_server/ +app_update 343050 validate +quit 
+
+0 0 * * * /home/ubuntu/start.sh
